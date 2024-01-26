@@ -6,6 +6,6 @@ import { CookieService } from './cookie.service';
 
 @Module({
   controllers: [AuthController],
-  providers: [AuthService, PasswordService, CookieService]
+  providers: [AuthService, PasswordService, CookieService],
 })
 export class AuthModule {}
