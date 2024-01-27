@@ -12,4 +12,4 @@ module.exports = {
       target: './src/shared/api/generated.ts',
     },
   },
-};
+}

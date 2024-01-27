@@ -1,7 +1,7 @@
-import { Inter } from 'next/font/google';
-import Image from 'next/image';
+import { Inter } from 'next/font/google'
+import Image from 'next/image'
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] })
 
 export function HomePage() {
   return (
@@ -168,5 +168,5 @@ export function HomePage() {
         </a>
       </div>
     </main>
-  );
+  )
 }

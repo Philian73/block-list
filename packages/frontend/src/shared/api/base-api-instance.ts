@@ -1,11 +1,11 @@
-import axios, { AxiosError, type AxiosRequestConfig } from 'axios';
+import axios, { AxiosError, type AxiosRequestConfig } from 'axios'
 
 export const baseApiInstance = axios.create({
   baseURL: '/api',
   headers: {
     'Content-Type': 'application/json',
   },
-});
+})
 
 export const createInstance = <T>(
   config: AxiosRequestConfig,
@@ -14,8 +14,8 @@ export const createInstance = <T>(
   return baseApiInstance({
     ...config,
     ...options,
-  }).then(response => response.data);
-};
+  }).then(response => response.data)
+}
 
-export type BodyType<Data> = Data;
-export type ErrorType<Error> = AxiosError<Error>;
+export type BodyType<Data> = Data
+export type ErrorType<Error> = AxiosError<Error>

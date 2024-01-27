@@ -1,5 +1,5 @@
-import { App } from '@/app';
+import { App } from '@/app'
 
-import '@/app/styles/globals.css';
+import '@/app/styles/globals.css'
 
-export default App;
+export default App
