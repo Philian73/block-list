@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { DbService } from '../db/db.service';
-import { AddBlockItemDto, BlockItemDto, BlockListQueryDto } from './dto';
+import { AddBlockItemDto, BlockListQueryDto } from './dto';
 
 @Injectable()
 export class BlockListService {
