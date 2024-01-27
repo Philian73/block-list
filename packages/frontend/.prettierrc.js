@@ -1,4 +1,4 @@
 module.exports = {
-   ...require('@it-incubator/prettier-config'),
-   semi: true,
+  ...require('@it-incubator/prettier-config'),
+  //override settings here
 };
