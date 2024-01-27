@@ -17,5 +17,5 @@ export const createInstance = <T>(
   }).then(response => response.data);
 };
 
-export type Body<Data> = Data;
-export type Error<Error> = AxiosError<Error>;
+export type BodyType<Data> = Data;
+export type ErrorType<Error> = AxiosError<Error>;
