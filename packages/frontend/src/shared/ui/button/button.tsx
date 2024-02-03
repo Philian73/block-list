@@ -1,5 +1,6 @@
 import {
   type ComponentPropsWithoutRef,
+  type ComponentType,
   type ElementRef,
   type ElementType,
   type ForwardedRef,
@@ -46,3 +47,13 @@ export const Button: ButtonPolymorph = forwardRef(
     return <Component className={classes} ref={ref} {...rest} />
   }
 )
+
+// ==============================================================================
+
+if (process.env.NODE_ENV === 'development') {
+  const ButtonDev = Button as ComponentType
+
+  ButtonDev.displayName = 'Button'
+}
+
+// ==============================================================================
