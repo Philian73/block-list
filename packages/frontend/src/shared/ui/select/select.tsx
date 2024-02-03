@@ -35,8 +35,8 @@ export const Select = forwardRef<ElementRef<typeof SelectPrimitive.Trigger>, Sel
     const scrollIconClasses = 'flex cursor-default items-center justify-center py-1'
 
     return (
-      <label {...rootProps} className={''}>
-        {!!label && <span>{label}</span>}
+      <label {...rootProps} className={clsx('flex flex-col', rootProps?.className)}>
+        {!!label && <span className={'mb-1'}>{label}</span>}
 
         <SelectPrimitive.Root>
           <SelectPrimitive.Trigger
