@@ -1,4 +1,9 @@
-import { ComponentProps, ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import {
+  type ComponentProps,
+  type ComponentPropsWithoutRef,
+  type ElementRef,
+  forwardRef,
+} from 'react'
 
 import { Icons } from '@/shared/assets/icons'
 import * as SelectPrimitive from '@radix-ui/react-select'
