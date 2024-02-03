@@ -36,3 +36,11 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     )
   }
 )
+
+// ==============================================================================
+
+if (process.env.NODE_ENV === 'development') {
+  TextField.displayName = 'TextField'
+}
+
+// ==============================================================================
