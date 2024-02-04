@@ -1,12 +1,4 @@
-import {
-  type ComponentPropsWithoutRef,
-  type ComponentType,
-  type ElementRef,
-  type ElementType,
-  type ForwardedRef,
-  type ReactNode,
-  forwardRef,
-} from 'react'
+import { type ComponentType, type ElementType, type ReactNode, forwardRef } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -17,19 +9,20 @@ const buttonVariants = {
   secondary: 'secondary',
 } as const
 
-type ButtonProps<T extends ElementType = 'button'> = {
-  as?: T
-  variant?: keyof typeof buttonVariants
-} & ComponentPropsWithoutRef<T>
+type ButtonProps<T extends ElementType> = PolymorphicComponentPropWithRef<
+  T,
+  { variant?: keyof typeof buttonVariants }
+>
 
-type ButtonPolymorph = <T extends ElementType = 'button'>(
-  props: ButtonProps<T> & {
-    ref?: ForwardedRef<ElementRef<T>>
-  }
-) => ReactNode
+type ButtonComponent = <T extends ElementType = 'button'>(props: ButtonProps<T>) => ReactNode | null
 
-export const Button: ButtonPolymorph = forwardRef(
-  ({ as: Component = 'button', className, variant = 'primary', ...rest }, ref) => {
+export const Button: ButtonComponent = forwardRef(
+  <T extends ElementType = 'button'>(
+    { as, className, variant = 'primary', ...rest }: ButtonProps<T>,
+    ref?: PolymorphicRef<T>
+  ) => {
+    const Component = as ?? 'button'
+
     const classes = clsx(
       className,
       'px-4 h-10 rounded flex gap-2 items-center justify-center [&:not(:disabled)]:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-300',
