@@ -7,14 +7,13 @@ export const baseApiInstance = axios.create({
   },
 })
 
-export const createInstance = <T>(
+export const createInstance = async <T>(
   config: AxiosRequestConfig,
   options?: AxiosRequestConfig
 ): Promise<T> => {
-  return baseApiInstance({
-    ...config,
-    ...options,
-  }).then(response => response.data)
+  const response = await baseApiInstance({ ...config, ...options })
+
+  return response.data
 }
 
 export type BodyType<Data> = Data
