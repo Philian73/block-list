@@ -22,6 +22,7 @@
     "react-hook-form": "^7.50.1"
   },
   "devDependencies": {
+    "@hookform/devtools": "^4.3.1",
     "@it-incubator/eslint-config": "^1.0.2",
     "@it-incubator/prettier-config": "^0.1.2",
     "@tanstack/react-query-devtools": "^5.17.21",
