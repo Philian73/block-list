@@ -30,7 +30,7 @@ export const Button: ButtonComponent = forwardRef(
         [buttonVariants.link]:
           'p-1 text-teal-500 cursor-pointer hover:text-teal-600 active:text-teal-700',
         [buttonVariants.outlined]:
-          'border border-slate-300 [&:not(:disabled)]:hover:bg-slate-400 [&:not(:disabled)]:active:bg-slate-500',
+          'border border-slate-300 [&:not(:disabled)]:hover:border-slate-400 [&:not(:disabled)]:active:bg-slate-500',
         [buttonVariants.primary]:
           'text-white bg-teal-500 shadow shadow-teal-500/30 [&:not(:disabled)]:hover:bg-teal-600 [&:not(:disabled)]:active:bg-teal-700',
         [buttonVariants.secondary]:
