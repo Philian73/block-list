@@ -4,7 +4,7 @@ export const getErrorMessage = (error: unknown) => {
   let errorMessage = 'Some error occurred'
 
   if (isAxiosError(error)) {
-    errorMessage = error.response?.data?.type ?? error?.message ?? errorMessage
+    errorMessage = error.response?.data?.message ?? error?.message ?? errorMessage
   } else if (error instanceof Error) {
     errorMessage = `Native error: ${error.message}`
   } else {
