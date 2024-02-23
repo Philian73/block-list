@@ -43,7 +43,7 @@ export const useSignOutMutation = () => {
     mutationKey: keys.signOut(),
     onSuccess() {
       router.push(ROUTES.SIGN_IN)
-      queryClient.removeQueries({ queryKey: keys.root() })
+      queryClient.removeQueries()
     },
   })
 }
