@@ -7,7 +7,7 @@ import { valibotResolver } from '@hookform/resolvers/valibot'
 import { AddBlockListData, addBlockListSchema } from './'
 
 export const useAddBlockItemForm = () => {
-  const { handleSubmit, watch, ...rest } = useForm<AddBlockListData>({
+  const { handleSubmit, reset, watch, ...rest } = useForm<AddBlockListData>({
     defaultValues: {
       data: '',
       type: AddBlockItemDtoType.Website,
@@ -20,7 +20,13 @@ export const useAddBlockItemForm = () => {
   const type = watch('type')
 
   return {
-    handleSubmit: handleSubmit(data => addBlockItemMutation.mutate(data)),
+    handleSubmit: handleSubmit(data => {
+      addBlockItemMutation.mutate(data, {
+        onSuccess() {
+          reset()
+        },
+      })
+    }),
     isLoading: addBlockItemMutation.isPending,
     type,
     ...rest,
