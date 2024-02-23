@@ -58,6 +58,23 @@ export const Icons = {
       />
     </svg>
   )),
+  Delete: svgWrapper((props, ref) => (
+    <svg
+      fill={'currentColor'}
+      height={24}
+      ref={ref}
+      viewBox={'0 0 24 24'}
+      width={24}
+      xmlns={'http://www.w3.org/2000/svg'}
+      {...props}
+    >
+      <path
+        d={
+          'M7 21q-.82 0-1.41-.59T5 19V6q-.42 0-.71-.29T4 5q0-.42.29-.71T5 4h4q0-.42.29-.71T10 3h4q.42 0 .71.29T15 4h4q.42 0 .71.29T20 5q0 .42-.29.71T19 6v13q0 .82-.59 1.41T17 21zM17 6H7v13h10zm-7 11q.42 0 .71-.29T11 16V9q0-.42-.29-.71T10 8q-.42 0-.71.29T9 9v7q0 .42.29.71T10 17m4 0q.42 0 .71-.29T15 16V9q0-.42-.29-.71T14 8q-.42 0-.71.29T13 9v7q0 .42.29.71T14 17M7 6v13z'
+        }
+      />
+    </svg>
+  )),
   Shield: svgWrapper((props, ref) => (
     <svg ref={ref} viewBox={'0 0 64 64'} xmlns={'http://www.w3.org/2000/svg'} {...props}>
       <path
