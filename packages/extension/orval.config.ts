@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   main: {
     input: './src/shared/api/schema.yaml',
     output: {
