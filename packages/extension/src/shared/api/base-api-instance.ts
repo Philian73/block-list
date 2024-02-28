@@ -10,17 +10,20 @@ const baseURL = 'http://localhost:3000' // use your own URL here or environment 
 
 export const createInstance = async <T>({
   data,
+  headers,
   method,
   params,
   url,
 }: {
   data?: BodyType<unknown>
+  headers?: HeadersInit
   method: 'DELETE' | 'GET' | 'PATCH' | 'POST' | 'PUT'
   params?: Record<string, string>
   responseType?: string
   url: string
 }): Promise<T> => {
   const response = await fetch(`${baseURL}${url}` + new URLSearchParams(params), {
+    headers,
     method,
     ...(data ? { body: JSON.stringify(data) } : {}),
   })
