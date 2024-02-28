@@ -4,15 +4,15 @@
  * Block list
  * OpenAPI spec version: 1.0.0
  */
-import { createInstance } from './base-api-instance'
-import type { BodyType } from './base-api-instance'
+import { type BodyType, createInstance } from './base-api-instance'
+
 export type BlockListControllerGetListParams = {
   q?: string
 }
 
 export type AddBlockItemDtoType = (typeof AddBlockItemDtoType)[keyof typeof AddBlockItemDtoType]
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const AddBlockItemDtoType = {
   KeyWord: 'KeyWord',
   Website: 'Website',
@@ -25,7 +25,7 @@ export interface AddBlockItemDto {
 
 export type BlockItemDtoType = (typeof BlockItemDtoType)[keyof typeof BlockItemDtoType]
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const BlockItemDtoType = {
   KeyWord: 'KeyWord',
   Website: 'Website',
@@ -77,63 +77,63 @@ export interface HelloWorldDto {
 }
 
 export const appControllerGetHello = () => {
-  return createInstance<HelloWorldDto>({ url: `/`, method: 'GET' })
+  return createInstance<HelloWorldDto>({ method: 'GET', url: `/` })
 }
 
 export const authControllerSignUp = (signUpBodyDto: BodyType<SignUpBodyDto>) => {
   return createInstance<void>({
-    url: `/auth/sign-up`,
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
     data: signUpBodyDto,
+    headers: { 'Content-Type': 'application/json' },
+    method: 'POST',
+    url: `/auth/sign-up`,
   })
 }
 
 export const authControllerSignIn = (signInBodyDto: BodyType<SignInBodyDto>) => {
   return createInstance<void>({
-    url: `/auth/sign-in`,
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
     data: signInBodyDto,
+    headers: { 'Content-Type': 'application/json' },
+    method: 'POST',
+    url: `/auth/sign-in`,
   })
 }
 
 export const authControllerSignOut = () => {
-  return createInstance<void>({ url: `/auth/sign-out`, method: 'POST' })
+  return createInstance<void>({ method: 'POST', url: `/auth/sign-out` })
 }
 
 export const authControllerGetSessionInfo = () => {
-  return createInstance<GetSessionInfoDto>({ url: `/auth/session`, method: 'GET' })
+  return createInstance<GetSessionInfoDto>({ method: 'GET', url: `/auth/session` })
 }
 
 export const accountControllerGetAccount = () => {
-  return createInstance<AccountDto>({ url: `/account`, method: 'GET' })
+  return createInstance<AccountDto>({ method: 'GET', url: `/account` })
 }
 
 export const accountControllerPatchAccount = (patchAccountDto: BodyType<PatchAccountDto>) => {
   return createInstance<AccountDto>({
-    url: `/account`,
-    method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
     data: patchAccountDto,
+    headers: { 'Content-Type': 'application/json' },
+    method: 'PATCH',
+    url: `/account`,
   })
 }
 
 export const blockListControllerGetList = (params?: BlockListControllerGetListParams) => {
-  return createInstance<BlockListDto>({ url: `/block-list`, method: 'GET', params })
+  return createInstance<BlockListDto>({ method: 'GET', params, url: `/block-list` })
 }
 
 export const blockListControllerAddBlockItem = (addBlockItemDto: BodyType<AddBlockItemDto>) => {
   return createInstance<BlockItemDto>({
-    url: `/block-list/item`,
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
     data: addBlockItemDto,
+    headers: { 'Content-Type': 'application/json' },
+    method: 'POST',
+    url: `/block-list/item`,
   })
 }
 
 export const blockListControllerRemoveBlockItem = (id: number) => {
-  return createInstance<BlockItemDto>({ url: `/block-list/item/${id}`, method: 'DELETE' })
+  return createInstance<BlockItemDto>({ method: 'DELETE', url: `/block-list/item/${id}` })
 }
 
 export type AppControllerGetHelloResult = NonNullable<
