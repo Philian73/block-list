@@ -1,7 +1,8 @@
 {
   "name": "extension",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Nikolay Sulteev",
   "type": "module",
   "scripts": {
     "dev": "vite",
