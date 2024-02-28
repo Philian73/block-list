@@ -29,7 +29,7 @@ export const createInstance = async <T>({
     ...(data ? { body: JSON.stringify(data) } : {}),
   })
 
-  if (response.status.toString().startsWith('2')) {
+  if (!response.status.toString().startsWith('2')) {
     throw new ApiError(response)
   }
 
