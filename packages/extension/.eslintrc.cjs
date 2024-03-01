@@ -1,4 +1,6 @@
 module.exports = {
   extends: '@it-incubator/eslint-config',
-  overrides: [],
+  "rules": {
+    "no-undef": "off"
+  }
 }
