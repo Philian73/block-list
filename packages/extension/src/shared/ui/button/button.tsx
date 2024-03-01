@@ -25,7 +25,7 @@ export const Button: ButtonComponent = forwardRef(
 
     const classes = clsx(
       className,
-      'px-4 h-10 rounded flex gap-2 items-center justify-center [&:not(:disabled)]:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-300',
+      'px-6 h-12 text-xl rounded flex gap-2 items-center justify-center [&:not(:disabled)]:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-300',
       {
         [buttonVariants.link]:
           'p-1 text-teal-500 cursor-pointer hover:text-teal-600 active:text-teal-700',
