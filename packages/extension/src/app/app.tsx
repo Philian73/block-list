@@ -1,3 +1,10 @@
+import { AppRouter } from './app-router'
+import { Providers } from './providers'
+
 export const App = () => {
-  return <div>App</div>
+  return (
+    <Providers>
+      <AppRouter />
+    </Providers>
+  )
 }
