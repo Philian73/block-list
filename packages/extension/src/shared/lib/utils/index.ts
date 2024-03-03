@@ -5,5 +5,6 @@ export {
   addInstallListener,
   createTab,
   setBrowserInterval,
+  setIcon,
   setNetRules,
 } from './browser'

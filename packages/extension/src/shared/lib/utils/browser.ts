@@ -32,6 +32,16 @@ export const addInstallListener = (cb: () => Awaited<void>) => {
   })
 }
 
+let currentIcon = ''
+
+export const setIcon = (url: string) => {
+  if (url !== currentIcon) {
+    currentIcon = url
+
+    return chrome.action.setIcon({ path: chrome.runtime.getURL(url) })
+  }
+}
+
 export type NetRule = chrome.declarativeNetRequest.Rule
 export const NetRuleActionType = chrome.declarativeNetRequest.RuleActionType
 export const NetRuleResourceType = chrome.declarativeNetRequest.ResourceType
